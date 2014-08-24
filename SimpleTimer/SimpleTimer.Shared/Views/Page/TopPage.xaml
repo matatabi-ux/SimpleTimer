@@ -1,0 +1,80 @@
+﻿<prism:VisualStateAwarePage x:Class="SimpleTimer.Views.TopPage"
+                            xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                            xmlns:b="using:SimpleTimer.Behaviors"
+                            xmlns:common="using:SimpleTimer.Common"
+                            xmlns:ctrl="using:SimpleTimer.Controls"
+                            xmlns:cv="using:SimpleTimer.Converters"
+                            xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                            xmlns:i="using:Microsoft.Xaml.Interactivity"
+                            xmlns:local="using:SimpleTimer.Views"
+                            xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                            xmlns:prism="using:Microsoft.Practices.Prism.StoreApps"
+                            xmlns:prismmvvm="using:Microsoft.Practices.Prism.Mvvm"
+                            xmlns:vm="using:SimpleTimer.ViewModels"
+                            x:Name="pageRoot"
+                            Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+                            prismmvvm:ViewModelLocator.AutoWireViewModel="True"
+                            mc:Ignorable="d">
+
+    <Page.Resources>
+        <cv:BooleanNegationConverter x:Key="BooleanNegationConverter" />
+    </Page.Resources>
+
+    <!--
+        このグリッドは 2 つの行を定義するページのルート パネルとして機能します:
+        * 行 0 には [戻る] ボタンおよびページ タイトルが含まれます
+        * 行 1 には残りのページ レイアウトが含まれます
+    -->
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="10*" />
+            <ColumnDefinition Width="1*" />
+        </Grid.ColumnDefinitions>
+
+        <Viewbox Grid.Row="1" Grid.Column="1">
+            <ctrl:ArcChart IsHitTestVisible="{Binding IsTimerStated,
+                                                      Converter={StaticResource BooleanNegationConverter}}"
+                           MaxValue="{Binding MaxSeconds}"
+                           Stroke="OrangeRed"
+                           Value="{Binding TimerValue,
+                                           Mode=TwoWay}" />
+        </Viewbox>
+        <ctrl:MinimizeAppBar Grid.Row="2"
+                             VerticalAlignment="Bottom"
+                             x:Uid="MinimizeAppBar" />
+    </Grid>
+    <Page.BottomAppBar>
+        <CommandBar IsOpen="True" IsSticky="True">
+            <AppBarButton Click="Presenter.OnStopClick"
+                          IsEnabled="{Binding IsEnableStop}"
+                          x:Uid="AppBarButton_Stop">
+                <AppBarButton.Icon>
+                    <FontIcon Glyph="" />
+                </AppBarButton.Icon>
+            </AppBarButton>
+            <AppBarButton Click="Presenter.OnPauseClick"
+                          IsEnabled="{Binding IsEnablePause}"
+                          x:Uid="AppBarButton_Pause">
+                <AppBarButton.Icon>
+                    <FontIcon Glyph="" />
+                </AppBarButton.Icon>
+            </AppBarButton>
+            <AppBarButton Click="Presenter.OnStartClick"
+                          IsEnabled="{Binding IsEnableStart}"
+                          x:Uid="AppBarButton_Start">
+                <AppBarButton.Icon>
+                    <FontIcon Glyph="" />
+                </AppBarButton.Icon>
+            </AppBarButton>
+        </CommandBar>
+    </Page.BottomAppBar>
+</prism:VisualStateAwarePage>

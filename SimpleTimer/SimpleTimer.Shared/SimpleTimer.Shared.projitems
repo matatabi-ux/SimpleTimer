@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>e41d446e-33bd-4035-9eb0-4f9df84c3382</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>SimpleTimer</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="$(MSBuildThisFileDirectory)App.xaml">
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Common\Constants.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Common\DependencyPropertyChangedHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Common\MvpvmAppBase.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\Arc.xaml.cs">
+      <DependentUpon>Arc.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\ArcChart.xaml.cs">
+      <DependentUpon>ArcChart.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\MinimizeAppBar.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\VariableSizedGridView.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Converters\BooleanNegationConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Converters\BoolToVisibilityConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Converters\CodeToColorConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Converters\DateTimeToStringConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Converters\NullableToVisibilityConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Converters\StringFormatConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Model.generated.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Presenters\IPresenter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Presenters\PresenterBase.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Presenters\PresenterLocator.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Presenters\TopPagePresenter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Repositories\Repository.generated.cs">
+      <DependentUpon>Repository.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Services\PageNavigationService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\TopPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\ViewModel.generated.cs">
+      <DependentUpon>ViewModel.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\ViewModelBase.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\IPresenterView.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Page\TopPage.xaml.cs">
+      <DependentUpon>TopPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\PresenterViewAttribute.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="$(MSBuildThisFileDirectory)InfrastructureAssemblies\NotificationsExtensions.pri" />
+    <None Include="$(MSBuildThisFileDirectory)InfrastructureAssemblies\NotificationsExtensions.winmd" />
+    <None Include="$(MSBuildThisFileDirectory)InfrastructureAssemblies\SimpleTimer.GenerateDefine.dll" />
+    <None Include="$(MSBuildThisFileDirectory)Models\Model.tt">
+      <LastGenOutput>Model.generated.cs</LastGenOutput>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)Repositories\Repository.tt">
+      <LastGenOutput>Repository.generated.cs</LastGenOutput>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)ViewModels\ViewModel.tt">
+      <LastGenOutput>ViewModel.generated.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <PRIResource Include="$(MSBuildThisFileDirectory)Strings\ja-JP\Resources.resw" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Data\default-app-settings.xml" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Images\IMG_0914.JPG" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Images\IMG_0932.JPG" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Images\IMG_0937.JPG" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Images\IMG_0980.JPG" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Images\IMG_0998.JPG" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Images\IMG_1002.JPG" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Images\IMG_1007.JPG" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Images\IMG_1023.JPG" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Images\IMG_1029.JPG" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Images\IMG_1032.JPG" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Images\IMG_1039.JPG" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Images\IMG_1064.JPG" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Images\IMG_1065.JPG" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Logo\Square150x150Logo.scale-100.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Logo\Square150x150Logo.scale-140.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Logo\StoreLogo.scale-100.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Logo\StoreLogo.scale-140.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Logo\Wide310x150Logo.scale-100.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Logo\Wide310x150Logo.scale-140.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="$(MSBuildThisFileDirectory)Controls\Arc.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Controls\ArcChart.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Themes\DataTemplates.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Themes\DesignStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Views\Page\TopPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+</Project>

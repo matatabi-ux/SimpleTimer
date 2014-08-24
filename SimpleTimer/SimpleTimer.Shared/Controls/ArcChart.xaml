@@ -1,0 +1,54 @@
+﻿<UserControl x:Class="SimpleTimer.Controls.ArcChart"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:ctrl="using:SimpleTimer.Controls"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             FontSize="42"
+             FontWeight="Bold"
+             Foreground="#FFE3E3E3"
+             IsEnabled="True"
+             IsHitTestVisible="True"
+             ManipulationCompleted="OnManipulationCompleted"
+             ManipulationDelta="OnManipulationDelta"
+             mc:Ignorable="d">
+
+    <UserControl.ManipulationMode>
+        <ManipulationModes>TranslateX,TranslateY</ManipulationModes>
+    </UserControl.ManipulationMode>
+
+    <UserControl.Resources>
+        <Storyboard x:Name="ValueChangeAnimation">
+            <DoubleAnimationUsingKeyFrames Duration="0:0:0.7"
+                                           EnableDependentAnimation="True"
+                                           Storyboard.TargetName="Arc"
+                                           Storyboard.TargetProperty="(ctrl:Arc.EndAngle)">
+                <DiscreteDoubleKeyFrame KeyTime="0" Value="105" />
+                <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="435">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <QuarticEase EasingMode="EaseOut" />
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+    </UserControl.Resources>
+
+    <Grid x:Name="Chart" Background="Transparent">
+        <Grid Margin="15,15,0,0"
+              HorizontalAlignment="Center"
+              VerticalAlignment="Center">
+            <ctrl:Arc x:Name="BackgroundArc"
+                      EndAngle="435"
+                      StartAngle="105"
+                      Stroke="#FF0A0A0A"
+                      StrokeThickness="30" />
+            <ctrl:Arc x:Name="Arc"
+                      EndAngle="105"
+                      StartAngle="105"
+                      StrokeThickness="30" />
+        </Grid>
+        <TextBlock x:Name="Number"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center" />
+    </Grid>
+</UserControl>
