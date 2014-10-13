@@ -40,7 +40,7 @@
             <ctrl:Arc x:Name="BackgroundArc"
                       EndAngle="435"
                       StartAngle="105"
-                      Stroke="#FF0A0A0A"
+                      Stroke="#FF1A1A1A"
                       StrokeThickness="30" />
             <ctrl:Arc x:Name="Arc"
                       EndAngle="105"
